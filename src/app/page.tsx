@@ -133,7 +133,7 @@ export default function HomePage() {
       <div className="grid md:grid-cols-2">
         <div className="relative min-h-[260px] md:min-h-[360px]">
           <Image
-            src="/images/sections/feature.jpg"
+            src="/images/sections/feature.jpeg"
             alt="Spa feature"
             fill
             className="object-cover"
@@ -230,7 +230,7 @@ export default function HomePage() {
       <div className="mx-auto w-full max-w-[480px]">
         <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-secondary shadow-soft">
           <Image
-            src="/images/sections/values.jpg"
+            src="/images/sections/bliss-hot-stone-therapy.jpeg"
             alt="Spa ambience"
             fill
             className="object-cover"
@@ -277,76 +277,76 @@ export default function HomePage() {
   </div>
 </section>
 
-{/* VOICES OF WELLNESS (full-bleed band like design) */}
-<section className="full-bleed relative overflow-hidden">
-  {/* pattern overlay (optional) */}
-  <div className="absolute inset-0 opacity-[0.12] bg-[radial-gradient(circle_at_center,rgba(255,255,255,.35)_1px,transparent_1px)] [background-size:90px_90px]" />
+    {/* VOICES OF WELLNESS (full-bleed band like design) */}
+    <section className="full-bleed relative overflow-hidden">
+      {/* pattern overlay (optional) */}
+      <div className="absolute inset-0 opacity-[0.12] bg-[radial-gradient(circle_at_center,rgba(255,255,255,.35)_1px,transparent_1px)] [background-size:90px_90px]" />
 
-  <div className="bg-primary text-primary-foreground py-16 md:py-24 relative">
-    <div className="site-container text-center">
-      <div className="mx-auto mb-6 h-10 w-10 rounded-full border border-primary-foreground/30" />
-      <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">Voices of Wellness</h2>
+      <div className="bg-primary text-primary-foreground py-16 md:py-24 relative">
+        <div className="site-container text-center">
+          <div className="mx-auto mb-6 h-10 w-10 rounded-full border border-primary-foreground/30" />
+          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">Voices of Wellness</h2>
 
-      {/* choose one “hero” quote like the UI */}
-      <p className="mt-10 text-xl md:text-3xl leading-relaxed max-w-4xl mx-auto opacity-95">
-        “{testimonials[0]?.quote}”
-      </p>
+          {/* choose one “hero” quote like the UI */}
+          <p className="mt-10 text-xl md:text-3xl leading-relaxed max-w-4xl mx-auto opacity-95">
+            “{testimonials[0]?.quote}”
+          </p>
 
-      <div className="mt-8 text-sm md:text-base opacity-85">
-        {testimonials[0]?.name}
-        {testimonials[0]?.role ? `, ${testimonials[0]?.role}` : ""}
-      </div>
-
-      {/* optional: small cards below (if you want) */}
-      <div className="mt-12 grid gap-6 md:grid-cols-2 text-left">
-        {testimonials.slice(1, 3).map((t) => (
-          <div
-            key={t.name}
-            className="rounded-3xl bg-primary-foreground/10 border border-primary-foreground/15 p-7"
-          >
-            <p className="opacity-95">“{t.quote}”</p>
-            <div className="mt-5 font-semibold">{t.name}</div>
-            {t.role ? <div className="text-sm opacity-80">{t.role}</div> : null}
+          <div className="mt-8 text-sm md:text-base opacity-85">
+            {testimonials[0]?.name}
+            {testimonials[0]?.role ? `, ${testimonials[0]?.role}` : ""}
           </div>
-        ))}
+
+          {/* optional: small cards below (if you want) */}
+          <div className="mt-12 grid gap-6 md:grid-cols-2 text-left">
+            {testimonials.slice(1, 3).map((t) => (
+              <div
+                key={t.name}
+                className="rounded-3xl bg-primary-foreground/10 border border-primary-foreground/15 p-7"
+              >
+                <p className="opacity-95">“{t.quote}”</p>
+                <div className="mt-5 font-semibold">{t.name}</div>
+                {t.role ? <div className="text-sm opacity-80">{t.role}</div> : null}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
       {/*How it works booking STEPS */}
-<section className="section relative overflow-hidden">
-  {/* subtle pattern (optional) */}
-  <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_center,rgba(0,0,0,.25)_1px,transparent_1px)] [background-size:120px_120px]" />
+      <section className="section relative overflow-hidden">
+        {/* subtle pattern (optional) */}
+        <div className="absolute inset-0 opacity-[0.07] bg-[radial-gradient(circle_at_center,rgba(0,0,0,.25)_1px,transparent_1px)] [background-size:120px_120px]" />
 
-  <div className="site-container relative">
-    <div className="text-center">
-      <Badge variant="outline" className="rounded-full px-4 py-1">How it Works</Badge>
-      <h2 className="mt-4 text-4xl md:text-5xl font-semibold text-primary">
-        From Booking to Glowing
-      </h2>
-      <p className="p-muted mt-3 max-w-2xl mx-auto">
-        A simple journey designed to feel effortless.
-      </p>
-    </div>
-
-    {/* divider layout */}
-    <div className="mt-12 grid gap-10 md:grid-cols-4 md:gap-0 md:divide-x md:divide-border/40">
-      {steps.map((s) => {
-        return (
-          <div key={s.n} className="md:px-10">
-            <div className="flex items-center gap-3">
-              <div className="text-3xl font-semibold text-primary/70">{s.n}</div>
-            </div>
-
-            <div className="mt-5 text-lg font-semibold">{s.title}</div>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+        <div className="site-container relative">
+          <div className="text-center">
+            <Badge variant="outline" className="rounded-full px-4 py-1">How it Works</Badge>
+            <h2 className="mt-4 text-4xl md:text-5xl font-semibold text-primary">
+              From Booking to Glowing
+            </h2>
+            <p className="p-muted mt-3 max-w-2xl mx-auto">
+              A simple journey designed to feel effortless.
+            </p>
           </div>
-        );
-      })}
-    </div>
-  </div>
-</section>
+
+          {/* divider layout */}
+          <div className="mt-12 grid gap-10 md:grid-cols-4 md:gap-0 md:divide-x md:divide-border/40">
+            {steps.map((s) => {
+              return (
+                <div key={s.n} className="md:px-10">
+                  <div className="flex items-center gap-3">
+                    <div className="text-3xl font-semibold text-primary/70">{s.n}</div>
+                  </div>
+
+                  <div className="mt-5 text-lg font-semibold">{s.title}</div>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* PRICING */}
       <section className="section">

@@ -80,9 +80,9 @@ export default function ServicesPage() {
                 </Button>
                 </Link>
                 <Link href="/packages">
-                <Button
-  variant="ghost"
-  className="rounded-full border border-white text-white bg-transparent hover:bg-white/10 hover:text-white"
+                <Button 
+                  variant="ghost"
+                  className="rounded-full border border-white text-white bg-transparent hover:bg-white/10 hover:text-white"
                 >
                     Explore Packages
                 </Button>

@@ -48,111 +48,92 @@
 }
 
 /* =========================
-   Blissful Quins Spa Theme
-   Warm cream + deep brown
+   Blissful Quin's Spa Theme
+   Purple / Pink brand
    ========================= */
+
 :root {
-  /* larger rounding like your mock (~24px) */
   --radius: 1.5rem;
 
-  /* Backgrounds / text */
-  --background: oklch(0.99 0.008 70);     /* warm cream */
-  --foreground: oklch(0.20 0.015 55);     /* deep warm text */
+  /* Background */
+  --background: oklch(0.99 0.01 330);
+  --foreground: oklch(0.22 0.02 330);
 
-  /* Surfaces */
-  --card: oklch(0.995 0.004 70);          /* almost white */
-  --card-foreground: oklch(0.20 0.015 55);
+  /* Cards */
+  --card: oklch(0.995 0.005 330);
+  --card-foreground: oklch(0.22 0.02 330);
 
-  --popover: oklch(0.995 0.004 70);
-  --popover-foreground: oklch(0.20 0.015 55);
+  --popover: oklch(0.995 0.005 330);
+  --popover-foreground: oklch(0.22 0.02 330);
 
-  /* Brand (deep brown) */
-  --primary: oklch(0.43 0.045 55);        /* deep brown */
-  --primary-foreground: oklch(0.99 0.008 70);
+  /* Brand Purple (from logo) */
+  --primary: oklch(0.52 0.20 340);          /* #A21A64 */
+  --primary-foreground: oklch(0.98 0.01 330);
 
-  /* Soft beige blocks */
-  --secondary: oklch(0.94 0.015 70);      /* beige cards/tiles */
-  --secondary-foreground: oklch(0.26 0.02 55);
+  /* Secondary pink surface */
+  --secondary: oklch(0.94 0.04 330);        /* light pink */
+  --secondary-foreground: oklch(0.30 0.04 330);
 
-  /* Muted text / fills */
-  --muted: oklch(0.93 0.012 70);
-  --muted-foreground: oklch(0.52 0.02 55); /* warm gray-brown */
+  /* Muted */
+  --muted: oklch(0.95 0.02 330);
+  --muted-foreground: oklch(0.52 0.03 330);
 
-  /* Accent (hover backgrounds, subtle highlights) */
-  --accent: oklch(0.92 0.018 70);
-  --accent-foreground: oklch(0.26 0.02 55);
+  /* Accent */
+  --accent: oklch(0.88 0.06 330);           /* soft pink highlight */
+  --accent-foreground: oklch(0.28 0.05 330);
 
   /* System */
-  --destructive: oklch(0.58 0.20 27.3);
+  --destructive: oklch(0.58 0.20 27);
 
-  /* Borders / inputs / focus ring */
-  --border: oklch(0.88 0.01 70);
-  --input: oklch(0.88 0.01 70);
-  --ring: oklch(0.43 0.045 55);
+  /* Borders */
+  --border: oklch(0.90 0.02 330);
+  --input: oklch(0.90 0.02 330);
+  --ring: oklch(0.52 0.20 340);
 
-  /* Charts (not used much here, but keep pleasant) */
-  --chart-1: oklch(0.55 0.12 55);
-  --chart-2: oklch(0.62 0.08 150);
-  --chart-3: oklch(0.45 0.06 230);
-  --chart-4: oklch(0.72 0.10 85);
-  --chart-5: oklch(0.68 0.10 30);
+  /* Charts */
+  --chart-1: oklch(0.60 0.18 340);
+  --chart-2: oklch(0.65 0.14 320);
+  --chart-3: oklch(0.55 0.16 10);
+  --chart-4: oklch(0.70 0.12 300);
+  --chart-5: oklch(0.72 0.10 30);
 
-  /* Sidebar tokens (safe defaults) */
-  --sidebar: oklch(0.985 0.008 70);
-  --sidebar-foreground: oklch(0.20 0.015 55);
-  --sidebar-primary: oklch(0.43 0.045 55);
-  --sidebar-primary-foreground: oklch(0.99 0.008 70);
-  --sidebar-accent: oklch(0.94 0.015 70);
-  --sidebar-accent-foreground: oklch(0.26 0.02 55);
-  --sidebar-border: oklch(0.88 0.01 70);
-  --sidebar-ring: oklch(0.43 0.045 55);
+  /* Sidebar */
+  --sidebar: oklch(0.99 0.01 330);
+  --sidebar-foreground: oklch(0.22 0.02 330);
+  --sidebar-primary: oklch(0.52 0.20 340);
+  --sidebar-primary-foreground: oklch(0.98 0.01 330);
+  --sidebar-accent: oklch(0.94 0.04 330);
+  --sidebar-accent-foreground: oklch(0.30 0.04 330);
+  --sidebar-border: oklch(0.90 0.02 330);
+  --sidebar-ring: oklch(0.52 0.20 340);
 }
 
 /* Optional: dark mode variant (still warm, not pure gray) */
 .dark {
-  --radius: 1.5rem;
+  --background: oklch(0.18 0.02 330);
+  --foreground: oklch(0.96 0.01 330);
 
-  --background: oklch(0.17 0.01 55);      /* warm dark */
-  --foreground: oklch(0.98 0.008 70);
+  --card: oklch(0.22 0.02 330);
+  --card-foreground: oklch(0.96 0.01 330);
 
-  --card: oklch(0.20 0.01 55);
-  --card-foreground: oklch(0.98 0.008 70);
+  --popover: oklch(0.22 0.02 330);
+  --popover-foreground: oklch(0.96 0.01 330);
 
-  --popover: oklch(0.20 0.01 55);
-  --popover-foreground: oklch(0.98 0.008 70);
+  --primary: oklch(0.65 0.20 340);
+  --primary-foreground: oklch(0.18 0.02 330);
 
-  --primary: oklch(0.78 0.04 70);         /* lighter cream-brown highlight */
-  --primary-foreground: oklch(0.18 0.01 55);
+  --secondary: oklch(0.30 0.03 330);
+  --secondary-foreground: oklch(0.96 0.01 330);
 
-  --secondary: oklch(0.25 0.01 55);
-  --secondary-foreground: oklch(0.98 0.008 70);
+  --muted: oklch(0.28 0.02 330);
+  --muted-foreground: oklch(0.70 0.02 330);
 
-  --muted: oklch(0.25 0.01 55);
-  --muted-foreground: oklch(0.78 0.01 70);
-
-  --accent: oklch(0.27 0.01 55);
-  --accent-foreground: oklch(0.98 0.008 70);
-
-  --destructive: oklch(0.70 0.18 22);
+  --accent: oklch(0.35 0.04 330);
+  --accent-foreground: oklch(0.96 0.01 330);
 
   --border: oklch(0.98 0 0 / 12%);
   --input: oklch(0.98 0 0 / 16%);
-  --ring: oklch(0.78 0.04 70);
-
-  --chart-1: oklch(0.72 0.10 55);
-  --chart-2: oklch(0.75 0.08 150);
-  --chart-3: oklch(0.78 0.10 85);
-  --chart-4: oklch(0.70 0.12 300);
-  --chart-5: oklch(0.72 0.12 30);
-
-  --sidebar: oklch(0.20 0.01 55);
-  --sidebar-foreground: oklch(0.98 0.008 70);
-  --sidebar-primary: oklch(0.78 0.04 70);
-  --sidebar-primary-foreground: oklch(0.18 0.01 55);
-  --sidebar-accent: oklch(0.25 0.01 55);
-  --sidebar-accent-foreground: oklch(0.98 0.008 70);
-  --sidebar-border: oklch(0.98 0 0 / 12%);
-  --sidebar-ring: oklch(0.78 0.04 70);
+  --ring: oklch(0.65 0.20 340);
 }
 
 :root {

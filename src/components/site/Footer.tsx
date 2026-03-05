@@ -1,13 +1,11 @@
 import Link from "next/link";
-import { Instagram, Facebook, Linkedin, Youtube, X } from "lucide-react";
+import { Instagram, Facebook, Linkedin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const socials = [
   { href: "https://instagram.com", label: "Instagram", Icon: Instagram },
   { href: "https://facebook.com", label: "Facebook", Icon: Facebook },
   { href: "https://linkedin.com", label: "LinkedIn", Icon: Linkedin },
-  { href: "https://youtube.com", label: "YouTube", Icon: Youtube },
-  { href: "https://x.com", label: "X", Icon: X },
 ];
 
 
@@ -62,7 +60,7 @@ export default function Footer({ className }: { className?: string }) {
 
             <div className="mt-6 text-sm text-muted-foreground">
               <div className="font-semibold text-primary mb-2">Working Hours</div>
-              <div>Monday – Saturday: 9:00am – 8:00pm</div>
+              <div>Monday – Saturday: 9:00am – 9:00pm</div>
               <div>Sunday: Closed</div>
             </div>
           </div>
@@ -80,9 +78,9 @@ export default function Footer({ className }: { className?: string }) {
           <div className="md:col-span-4">
             <h4 className="font-semibold text-primary">Contact Us</h4>
             <ul className="mt-4 grid gap-2 text-muted-foreground">
-              <li>(123) 456-7890</li>
+              <li>+254 114 123 208</li>
               <li>hello@blissfulquins.com</li>
-              <li>123 Serenity Lane, Los Angeles, CA 90028</li>
+              <li>6 Chaka Rd, Nairobi, Kenya</li>
             </ul>
 
             {/* socials pills (optional) */}

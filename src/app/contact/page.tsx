@@ -1,25 +1,11 @@
 import Image from "next/image"
-import {
-  Phone,
-  Clock,
-  MapPin,
-  Instagram,
-  Facebook,
-  Linkedin,
-  Youtube,
-  X,
-} from "lucide-react"
+import { Phone, Clock, MapPin, Instagram, Facebook, Linkedin, } from "lucide-react"
 
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
 
 import { generalFaqs } from "@/lib/data/faqs"
 
@@ -103,9 +89,7 @@ export default function ContactPage() {
                   className="bg-transparent border-white/40 text-white placeholder:text-white/60 min-h-[140px]"
                 />
 
-                <Button
-                  className="rounded-full bg-background text-foreground hover:bg-background/90 w-fit px-8"
-                >
+                <Button className="rounded-full bg-background text-foreground hover:bg-background/90 w-fit px-8">
                   Send Message
                 </Button>
 
@@ -113,7 +97,6 @@ export default function ContactPage() {
 
             </div>
           </div>
-
         </div>
       </section>
 
@@ -132,11 +115,11 @@ export default function ContactPage() {
               <h3 className="mt-4 font-semibold">Contact</h3>
 
               <p className="text-muted-foreground text-sm mt-2">
-                hello@beauva.com
+                hello@blissfulquins.com
               </p>
 
               <p className="text-muted-foreground text-sm">
-                (123) 456-7890
+                +254 114 123 208
               </p>
             </div>
 
@@ -149,11 +132,11 @@ export default function ContactPage() {
               <h3 className="mt-4 font-semibold">Opening Hours</h3>
 
               <p className="text-muted-foreground text-sm mt-2">
-                Mon – Fri: 10:00AM – 7:00PM
+                Mon – Fri: 09:00AM – 9:00PM
               </p>
 
               <p className="text-muted-foreground text-sm">
-                Saturday: 10:00AM – 5:00PM
+                Saturday: 09:00AM – 9:00PM
               </p>
 
               <p className="text-muted-foreground text-sm">
@@ -170,20 +153,19 @@ export default function ContactPage() {
               <h3 className="mt-4 font-semibold">Address</h3>
 
               <p className="text-muted-foreground text-sm mt-2">
-                123 Serenity Lane
+                6 Chaka Rd
               </p>
 
               <p className="text-muted-foreground text-sm">
-                Los Angeles, CA 90028
+                Nairobi, Kenya
               </p>
             </div>
-
           </div>
 
           {/* SOCIALS */}
           <div className="mt-10 flex justify-center gap-4">
 
-            {[Instagram, Facebook, Linkedin, Youtube, X].map((Icon, i) => (
+            {[Instagram, Facebook, Linkedin,].map((Icon, i) => (
               <div
                 key={i}
                 className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center cursor-pointer hover:bg-secondary/80"
@@ -199,14 +181,14 @@ export default function ContactPage() {
 
       {/* MAP */}
       <section className="section pt-0">
-        <div className="relative h-[380px] w-full">
+        <div className="relative h-[580px] w-full">
 
-          <iframe
+          <iframe 
             className="absolute inset-0 w-full h-full"
             loading="lazy"
-            src="https://www.google.com/maps?q=Los%20Angeles%20CA&output=embed"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8036222890273!2d36.788166776019!3d-1.2922266356348189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6c752f783818fc4f%3A0xedd92527f7b8e1e5!2sQuins%20Blissful%20SPA!5e0!3m2!1sen!2sza!4v1772743365680!5m2!1sen!2sza" 
           />
-
+          
         </div>
       </section>
 

@@ -186,6 +186,10 @@ body {
   }
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 @layer utilities {
   .site-container {
     @apply mx-auto w-full max-w-6xl px-4 md:px-6 lg:px-8;
@@ -193,9 +197,20 @@ body {
 
   /* Makes a section background span the whole screen (content stays constrained) */
   .full-bleed {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    width: 100%;
+    position: relative;
+  }
+
+  .full-bleed::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: inherit;
+    z-index: -1;
   }
 
   .section {

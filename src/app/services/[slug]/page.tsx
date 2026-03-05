@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import GalleryGrid from "@/components/services/GalleryGrid"
+import TestimonialSlider from "@/components/services/TestimonialSlider"
+import ServiceFAQ from "@/components/services/ServiceFAQ"
+import ServiceCTA from "@/components/services/ServiceCTA"
 
 import { services } from "@/lib/data/services";
-import { testimonials } from "@/lib/data/testimonials";
+
 
 export default async function ServiceDetailsPage({
   params,
@@ -21,6 +23,7 @@ export default async function ServiceDetailsPage({
   if (!service) return notFound();
 
   return (
+    <>
     <section className="section">
       <div className="site-container max-w-6xl">
 
@@ -50,6 +53,13 @@ export default async function ServiceDetailsPage({
             priority
           />
         </div>
+        </div>
+
+        </section>
+
+        <section className="section">
+
+          <div className="site-container max-w-6xl">
 
         {/* CONTENT + SIDEBAR */}
         <div className="mt-14 grid md:grid-cols-12 gap-10">
@@ -132,25 +142,6 @@ export default async function ServiceDetailsPage({
                 ))}
               </div>
             </div>
-
-            {/* GALLERY */}
-            <div className="mt-12">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
-                {service.gallery.map((src) => (
-                  <div
-                    key={src}
-                    className="relative aspect-[4/3] rounded-xl overflow-hidden"
-                  >
-                    <Image
-                      src={src}
-                      alt="Gallery"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* SIDEBAR */}
@@ -197,99 +188,22 @@ export default async function ServiceDetailsPage({
 
           </div>
         </div>
+        </div>
+    </section>
+
+
+        {/* GALLERY GRID */}
+        <GalleryGrid images={service.gallery} />
 
         {/* TESTIMONIALS */}
-        <div className="mt-20 bg-[#6b5e52] text-white rounded-2xl p-10">
-
-          <h2 className="text-3xl font-serif font-semibold">
-            Your Words, Our Pride
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-6 mt-8">
-            {testimonials.slice(0,3).map((t) => (
-              <Card key={t.name} className="p-6 bg-white text-black rounded-xl">
-                <p className="text-sm leading-relaxed">“{t.quote}”</p>
-
-                <div className="mt-4 font-semibold">{t.name}</div>
-
-                {t.role && (
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
-                )}
-              </Card>
-            ))}
-          </div>
-
-        </div>
-
+        <TestimonialSlider />
+        
         {/* FAQ */}
-        <div className="mt-20 text-center">
-
-          <h2 className="text-3xl font-serif font-semibold">
-            Need More Details?
-          </h2>
-
-          <p className="text-muted-foreground mt-2">
-            Browse through our most asked questions.
-          </p>
-
-          <div className="max-w-3xl mx-auto mt-10">
-            <Accordion type="single" collapsible>
-
-              {service.faqs.map((faq) => (
-                <AccordionItem key={faq.q} value={faq.q}>
-                  <AccordionTrigger>{faq.q}</AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    {faq.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-
-            </Accordion>
-          </div>
-
-        </div>
+        <ServiceFAQ faqs={service.faqs} />
 
         {/* CTA */}
-        <div className="mt-20 rounded-2xl overflow-hidden grid md:grid-cols-2">
+        <ServiceCTA />
 
-          <div className="bg-[#6b5e52] text-white p-10 flex flex-col justify-center">
-
-            <h2 className="text-3xl font-serif font-semibold">
-              Feel Ready to Rejuvenate?
-            </h2>
-
-            <p className="mt-4 text-white/80">
-              Book your treatment today or contact us for personalized
-              recommendations.
-            </p>
-
-            <div className="mt-6 flex gap-3">
-              <Button className="rounded-full bg-white text-[#6b5e52]">
-                Book Now
-              </Button>
-
-              <Button
-                variant="outline"
-                className="rounded-full border-white text-white hover:bg-white/10"
-              >
-                Contact Us
-              </Button>
-            </div>
-
-          </div>
-
-          <div className="relative min-h-[280px]">
-            <Image
-              src="/images/sections/service-cta.jpg"
-              alt="Spa"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+</>
   );
 }

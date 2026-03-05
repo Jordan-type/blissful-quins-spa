@@ -29,7 +29,7 @@ export default function Footer({ className }: { className?: string }) {
                 Sign up to receive exclusive offers, beauty tips, and wellness inspiration.
               </p>
 
-              <form className="flex w-full max-w-xl gap-3">
+              <form className="flex w-full max-w-xl flex-wrap sm:flex-nowrap gap-3">
                 <input
                   className="h-12 w-full rounded-full bg-primary-foreground/10 border border-primary-foreground/20 px-5 text-primary-foreground placeholder:text-primary-foreground/60 outline-none focus:border-primary-foreground/40"
                   placeholder="Enter your email"

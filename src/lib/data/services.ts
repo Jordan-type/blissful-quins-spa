@@ -23,21 +23,61 @@ export const services: Service[] = [
     schedule: "Mon–Sat: 9:00AM–8:00PM",
     price: "KSh 2,500 per session",
     benefits: ["Eases back tension", "Improves circulation", "Stress relief", "Better posture comfort"],
-    gallery: [],
-    faqs: [],
+    gallery: [
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-oils.jpg",
+      "/images/services/radiant-glow-facial.jpg",
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-diffuser.jpg",
+      "/images/services/aromatherapy-face.jpg",
+    ],
+    faqs: [
+      {
+        q: "Can I choose which essential oil is used during the massage?",
+        a: "Yes. Your therapist will offer a selection of oils and help you choose one that suits your mood and wellness goals.",
+      },
+      {
+        q: "Is aromatherapy massage safe for sensitive skin?",
+        a: "We use diluted therapeutic-grade oils. If you have allergies or sensitivities, let us know and we will adjust the treatment.",
+      },
+      {
+        q: "How often should I book an aromatherapy massage?",
+        a: "For relaxation and stress relief, once every 2–4 weeks is recommended.",
+      },
+    ],
   },
   {
     slug: "swedish-massage",
     title: "Swedish Massage",
     category: "Massage Therapy",
     short: "Gentle full-body massage for deep relaxation.",
-    heroImage: "/images/service/radiant-glow-facial.jpg",
+    heroImage: "/images/services/swedish-massage.jpg",
     duration: "60 minutes",
     schedule: "Mon–Sat: 9:00AM–8:00PM",
     price: "KSh 3,500 per session",
     benefits: ["Relaxation", "Improved circulation", "Muscle comfort", "Better sleep"],
-    gallery: [],
-    faqs: [],
+    gallery: [
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-oils.jpg",
+      "/images/services/aromatherapy-face.jpg",
+      "/images/services/radiant-glow-facial.jpg",
+      "/images/gallery/spa-diffuser.jpg",
+      "/images/services/aromatherapy-face.jpg",
+    ],
+    faqs: [
+      {
+        q: "Can I choose which essential oil is used during the massage?",
+        a: "Yes. Your therapist will offer a selection of oils and help you choose one that suits your mood and wellness goals.",
+      },
+      {
+        q: "Is aromatherapy massage safe for sensitive skin?",
+        a: "We use diluted therapeutic-grade oils. If you have allergies or sensitivities, let us know and we will adjust the treatment.",
+      },
+      {
+        q: "How often should I book an aromatherapy massage?",
+        a: "For relaxation and stress relief, once every 2–4 weeks is recommended.",
+      },
+    ],
   },
   {
     slug: "deep-tissue-massage",
@@ -49,21 +89,61 @@ export const services: Service[] = [
     schedule: "Mon–Sat: 9:00AM–8:00PM",
     price: "KSh 4,500 per session",
     benefits: ["Releases knots", "Improves mobility", "Post-workout recovery", "Stress reduction"],
-    gallery: [],
-    faqs: [],
+    gallery: [
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-oils.jpg",
+      "/images/services/radiant-glow-facial.jpg",
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-diffuser.jpg",
+      "/images/services/aromatherapy-face.jpg",
+    ],
+    faqs: [
+      {
+        q: "Can I choose which essential oil is used during the massage?",
+        a: "Yes. Your therapist will offer a selection of oils and help you choose one that suits your mood and wellness goals.",
+      },
+      {
+        q: "Is aromatherapy massage safe for sensitive skin?",
+        a: "We use diluted therapeutic-grade oils. If you have allergies or sensitivities, let us know and we will adjust the treatment.",
+      },
+      {
+        q: "How often should I book an aromatherapy massage?",
+        a: "For relaxation and stress relief, once every 2–4 weeks is recommended.",
+      },
+    ],
   },
   {
     slug: "aromatherapy",
     title: "Aromatherapy Massage",
     category: "Body & Wellness",
     short: "Essential oils + soothing touch for calm and clarity.",
-    heroImage: "/images/services/aromatherapy.jpg",
+    heroImage: "/images/services/aromatherapy-face.jpg",
     duration: "90 minutes",
     schedule: "Mon–Sat: 9:00AM–8:00PM",
     price: "KSh 5,000 per session",
     benefits: ["Reduces stress", "Improves sleep", "Eases tension", "Mood support"],
-    gallery: [],
-    faqs: [],
+    gallery: [
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-oils.jpg",
+      "/images/services/radiant-glow-facial.jpg",
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-diffuser.jpg",
+      "/images/services/aromatherapy-face.jpg",
+    ],
+    faqs: [
+      {
+        q: "Can I choose which essential oil is used during the massage?",
+        a: "Yes. Your therapist will offer a selection of oils and help you choose one that suits your mood and wellness goals.",
+      },
+      {
+        q: "Is aromatherapy massage safe for sensitive skin?",
+        a: "We use diluted therapeutic-grade oils. If you have allergies or sensitivities, let us know and we will adjust the treatment.",
+      },
+      {
+        q: "How often should I book an aromatherapy massage?",
+        a: "For relaxation and stress relief, once every 2–4 weeks is recommended.",
+      },
+    ],
   },
   {
     slug: "manicure",
@@ -75,8 +155,28 @@ export const services: Service[] = [
     schedule: "Mon–Sat: 9:00AM–8:00PM",
     price: "KSh 1,000 per session",
     benefits: ["Neat finish", "Healthy nails", "Hydration care", "Longer-lasting polish"],
-    gallery: [],
-    faqs: [],
+    gallery: [
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-oils.jpg",
+      "/images/services/radiant-glow-facial.jpg",
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-diffuser.jpg",
+      "/images/services/aromatherapy-face.jpg",
+    ],
+    faqs: [
+      {
+        q: "Can I choose which essential oil is used during the massage?",
+        a: "Yes. Your therapist will offer a selection of oils and help you choose one that suits your mood and wellness goals.",
+      },
+      {
+        q: "Is aromatherapy massage safe for sensitive skin?",
+        a: "We use diluted therapeutic-grade oils. If you have allergies or sensitivities, let us know and we will adjust the treatment.",
+      },
+      {
+        q: "How often should I book an aromatherapy massage?",
+        a: "For relaxation and stress relief, once every 2–4 weeks is recommended.",
+      },
+    ],
   },
   {
     slug: "pedicure",
@@ -88,8 +188,28 @@ export const services: Service[] = [
     schedule: "Mon–Sat: 9:00AM–8:00PM",
     price: "KSh 1,800 per session",
     benefits: ["Softer feet", "Callus care", "Relaxation", "Polished finish"],
-    gallery: [],
-    faqs: [],
+    gallery: [
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-oils.jpg",
+      "/images/services/radiant-glow-facial.jpg",
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-diffuser.jpg",
+      "/images/services/aromatherapy-face.jpg",
+    ],
+    faqs: [
+      {
+        q: "Can I choose which essential oil is used during the massage?",
+        a: "Yes. Your therapist will offer a selection of oils and help you choose one that suits your mood and wellness goals.",
+      },
+      {
+        q: "Is aromatherapy massage safe for sensitive skin?",
+        a: "We use diluted therapeutic-grade oils. If you have allergies or sensitivities, let us know and we will adjust the treatment.",
+      },
+      {
+        q: "How often should I book an aromatherapy massage?",
+        a: "For relaxation and stress relief, once every 2–4 weeks is recommended.",
+      },
+    ],
   },
   {
     slug: "coffee-scrub",
@@ -101,8 +221,28 @@ export const services: Service[] = [
     schedule: "Mon–Sat: 9:00AM–8:00PM",
     price: "KSh 3,500 per session",
     benefits: ["Smooth skin", "Improves texture", "Glow boost", "Refreshing feel"],
-    gallery: [],
-    faqs: [],
+    gallery: [
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-oils.jpg",
+      "/images/services/radiant-glow-facial.jpg",
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-diffuser.jpg",
+      "/images/services/aromatherapy-face.jpg",
+    ],
+    faqs: [
+      {
+        q: "Can I choose which essential oil is used during the massage?",
+        a: "Yes. Your therapist will offer a selection of oils and help you choose one that suits your mood and wellness goals.",
+      },
+      {
+        q: "Is aromatherapy massage safe for sensitive skin?",
+        a: "We use diluted therapeutic-grade oils. If you have allergies or sensitivities, let us know and we will adjust the treatment.",
+      },
+      {
+        q: "How often should I book an aromatherapy massage?",
+        a: "For relaxation and stress relief, once every 2–4 weeks is recommended.",
+      },
+    ],
   },
   {
     slug: "sea-salt-milk-scrub",
@@ -114,7 +254,27 @@ export const services: Service[] = [
     schedule: "Mon–Sat: 9:00AM–8:00PM",
     price: "KSh 3,000 per session",
     benefits: ["Softens skin", "Gentle renewal", "Hydration support", "Even tone feel"],
-    gallery: [],
-    faqs: [],
+    gallery: [
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-oils.jpg",
+      "/images/services/radiant-glow-facial.jpg",
+      "/images/services/aromatherapy-face.jpg",
+      "/images/gallery/spa-diffuser.jpg",
+      "/images/services/aromatherapy-face.jpg",
+    ],
+    faqs: [
+      {
+        q: "Can I choose which essential oil is used during the massage?",
+        a: "Yes. Your therapist will offer a selection of oils and help you choose one that suits your mood and wellness goals.",
+      },
+      {
+        q: "Is aromatherapy massage safe for sensitive skin?",
+        a: "We use diluted therapeutic-grade oils. If you have allergies or sensitivities, let us know and we will adjust the treatment.",
+      },
+      {
+        q: "How often should I book an aromatherapy massage?",
+        a: "For relaxation and stress relief, once every 2–4 weeks is recommended.",
+      },
+    ],
   },
 ];

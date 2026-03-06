@@ -36,8 +36,8 @@ export default function Header() {
 
         {/* Right */}
         <div className="flex items-center gap-3">
-          <Link href="/signup" className="hidden md:block">
-            <Button className="rounded-full px-6">Sign Up</Button>
+          <Link href="/book-now" className="hidden md:block">
+            <Button className="rounded-full px-6">Book Now</Button>
           </Link>
           <MobileNav />
         </div>

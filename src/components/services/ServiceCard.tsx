@@ -53,11 +53,10 @@ export function ServiceCard({ service }: { service: Service }) {
         <div className="flex flex-col gap-3 w-full max-w-[220px]">
 
           {/* View Details */}
-          <Link href={`/services/${service.slug}`} className="w-full">
-            <span className="block w-full text-center px-6 py-3 rounded-full bg-[#e8ddd1] text-[#4a3f35] text-sm font-medium tracking-wide transition-all duration-300 hover:bg-[#f5efe8] hover:shadow-lg hover:scale-[1.03]">
-              View Details
-            </span>
-          </Link>
+          <span className="block w-full text-center px-6 py-3 rounded-full bg-[#e8ddd1] text-[#4a3f35] text-sm font-medium tracking-wide transition-all duration-300 hover:bg-[#f5efe8] hover:shadow-lg hover:scale-[1.03]">
+            View Details
+          </span>
+
 
           {/* Book Now */}
           <Link

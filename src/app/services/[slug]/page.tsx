@@ -38,8 +38,7 @@ export default async function ServiceDetailsPage({
           </h1>
 
           <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-            Soothing touch meets the healing power of essential oils for a deeply relaxing,
-            restorative experience.
+            {service.short}
           </p>
         </div>
 
@@ -71,10 +70,7 @@ export default async function ServiceDetailsPage({
             <div>
               <h2 className="text-2xl font-semibold text-primary">About the Service</h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Aromatherapy massage is a full-body experience that combines gentle massage
-                techniques with the therapeutic benefits of carefully selected essential oils.
-                Whether you’re seeking stress relief, emotional grounding, or deep physical
-                relaxation, this treatment brings both body and mind into balance.
+                {service.description}
               </p>
             </div>
 
@@ -85,47 +81,17 @@ export default async function ServiceDetailsPage({
               </h3>
 
               <ol className="mt-6 space-y-6 text-muted-foreground">
+                {service.expectations.map((step, index) => (
+                  <li key={step.title}>
+                    <span className="font-semibold text-foreground">
+                      {index + 1}. {step.title}
+                    </span>
 
-                <li>
-                  <span className="font-semibold text-foreground">
-                    1. Consultation & Oil Selection
-                  </span>
-                  <p className="text-sm mt-1">
-                    Your therapist begins with a short consultation to understand your needs
-                    and mood, followed by selecting essential oils tailored to your wellness goals.
-                  </p>
-                </li>
-
-                <li>
-                  <span className="font-semibold text-foreground">
-                    2. Gentle Body Massage
-                  </span>
-                  <p className="text-sm mt-1">
-                    The full-body massage includes slow, flowing strokes designed to relieve
-                    tension, promote circulation, and encourage deep relaxation.
-                  </p>
-                </li>
-
-                <li>
-                  <span className="font-semibold text-foreground">
-                    3. Aromatherapy Integration
-                  </span>
-                  <p className="text-sm mt-1">
-                    As the oils are absorbed into the skin, soothing scents surround you,
-                    enriching the sensory experience and enhancing emotional wellbeing.
-                  </p>
-                </li>
-
-                <li>
-                  <span className="font-semibold text-foreground">
-                    4. Finishing Touch
-                  </span>
-                  <p className="text-sm mt-1">
-                    Your session ends with calming techniques and warm towel application
-                    to seal in the benefits.
-                  </p>
-                </li>
-
+                    <p className="text-sm mt-1">
+                      {step.text}
+                    </p>
+                  </li>
+                ))}
               </ol>
             </div>
 
@@ -147,7 +113,7 @@ export default async function ServiceDetailsPage({
           {/* SIDEBAR */}
           <div className="md:col-span-4">
 
-            <div className="bg-[#6b5e52] text-white rounded-2xl p-6 md:sticky md:top-24">
+            <div className="bg-primary text-white rounded-2xl p-6 md:sticky md:top-24">
 
               <h3 className="text-lg font-semibold mb-4">
                 Service Details
@@ -178,7 +144,13 @@ export default async function ServiceDetailsPage({
 
               </div>
 
-              <Link href="/contact">
+              <Link
+                href={{
+                  pathname: "/book-now",
+                  query: { service: service.title },
+                  hash: "booking-form",
+                }}
+              >
                 <Button className="mt-6 w-full rounded-full bg-white text-[#6b5e52] hover:bg-white/90">
                   Book Now
                 </Button>

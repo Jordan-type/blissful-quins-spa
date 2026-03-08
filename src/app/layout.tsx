@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
+import BookAppointmentFloatingButton from "@/components/BookAppointmentFloatingButton";
 
 // fonts
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"], });
@@ -23,9 +25,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Header />
             <main className="flex-1">
               {children}
+
             </main>
+              <Footer />
+              {/* Floating booking buttons */}
+              <BookAppointmentFloatingButton />
+              <WhatsAppFloatingButton/>
           </div>
-          <Footer />
       </body>
     </html>
   );

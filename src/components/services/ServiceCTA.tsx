@@ -22,7 +22,7 @@ export default function ServiceCTA() {
 
             <div className="mt-6 flex gap-3">
 
-              <Link href="/contact">
+              <Link href="/book-now">
                 <Button className="rounded-full bg-white text-[#6b5e52]">
                   Book Now
                 </Button>

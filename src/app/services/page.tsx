@@ -79,14 +79,14 @@ export default function ServicesPage() {
                     Book Now
                 </Button>
                 </Link>
-                <Link href="/packages">
+                {/* <Link href="/packages">
                 <Button 
                   variant="ghost"
                   className="rounded-full border border-white text-white bg-transparent hover:bg-white/10 hover:text-white"
                 >
                     Explore Packages
                 </Button>
-                </Link>
+                </Link> */}
             </div>
             </div>
         </div>

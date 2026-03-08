@@ -1,18 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HeartHandshake, Leaf, Lightbulb, BadgeCheck, Users, Heart } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
+
 import { services } from "@/lib/data/services";
 import { testimonials } from "@/lib/data/testimonials";
 
 const stats = [
-  { label: "Happy Clients Served", value: "5.2K+" },
+  { label: "Happy Clients Served", value: "30+" },
   { label: "Average Customer Rating", value: "4.9/5" },
   { label: "Years of Experience", value: "10+" },
-  { label: "Certified Wellness Experts", value: "50+" },
+  { label: "Certified Wellness Experts", value: "5+" },
 ];
 
 const steps = [
@@ -25,14 +32,14 @@ const steps = [
 const pricing = [
   {
     title: "The Glow Ritual",
-    price: "85 ksh",
+    price: "8500 ksh",
     note: "per session",
     bullets: ["Full-body wellness ritual", "Relaxation-focused", "Ideal for first-time visitors"],
     cta: "Book Now",
   },
   {
     title: "Blissful Essentials",
-    price: "145 ksh",
+    price: "1450 ksh",
     note: "per session",
     bullets: ["Signature massage + add-on", "Personalized oils", "Best value package"],
     cta: "Book Now",
@@ -40,7 +47,7 @@ const pricing = [
   },
   {
     title: "Radiance Retreat",
-    price: "220 ksh",
+    price: "2200 ksh",
     note: "per session",
     bullets: ["Premium full experience", "Deep renewal", "Glow-forward finishing touch"],
     cta: "Book Now",
@@ -129,33 +136,44 @@ export default function HomePage() {
 
   {/* Overlapping feature card */}
   <div className="site-container -mt-24 md:-mt-28 relative z-10">
-    <Card className="rounded-3xl overflow-hidden bg-secondary shadow-soft">
+    <Card className="rounded-3xl overflow-hidden bg-secondary shadow-soft p-0">
+      
       <div className="grid md:grid-cols-2">
-        <div className="relative min-h-[260px] md:min-h-[360px]">
+
+        {/* IMAGE */}
+        <div className="relative h-[260px] md:h-[360px] w-full">
           <Image
             src="/images/sections/feature.jpeg"
             alt="Spa feature"
             fill
+            sizes="(max-width:768px) 100vw, 50vw"
             className="object-cover"
           />
         </div>
 
+        {/* TEXT */}
         <div className="p-8 md:p-12 flex flex-col justify-center">
           <div className="text-sm text-muted-foreground">◌</div>
+
           <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-primary">
             Experience True Wellness
           </h2>
+
           <p className="p-muted mt-4 max-w-md">
             Luxury and wellness — facials, massages, and more — designed to renew your body, mind, and soul.
           </p>
 
           <div className="mt-6">
             <Link href="/about">
-              <Button className="rounded-full px-7">Get to Know More</Button>
+              <Button className="rounded-full px-7">
+                Get to Know More
+              </Button>
             </Link>
           </div>
         </div>
+
       </div>
+
     </Card>
   </div>
 
@@ -277,42 +295,62 @@ export default function HomePage() {
   </div>
 </section>
 
-    {/* VOICES OF WELLNESS (full-bleed band like design) */}
-    <section className="full-bleed relative overflow-hidden">
-      {/* pattern overlay (optional) */}
-      <div className="absolute inset-0 opacity-[0.12] bg-[radial-gradient(circle_at_center,rgba(255,255,255,.35)_1px,transparent_1px)] [background-size:90px_90px]" />
+{/* VOICES OF WELLNESS */}
+<section className="full-bleed relative overflow-hidden">
+  <div className="absolute inset-0 opacity-[0.12] bg-[radial-gradient(circle_at_center,rgba(255,255,255,.35)_1px,transparent_1px)] [background-size:90px_90px]" />
 
-      <div className="bg-primary text-primary-foreground py-16 md:py-24 relative">
-        <div className="site-container text-center">
-          <div className="mx-auto mb-6 h-10 w-10 rounded-full border border-primary-foreground/30" />
-          <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">Voices of Wellness</h2>
+  <div className="bg-primary text-primary-foreground py-16 md:py-24 relative">
+    <div className="site-container text-center">
 
-          {/* choose one “hero” quote like the UI */}
-          <p className="mt-10 text-xl md:text-3xl leading-relaxed max-w-4xl mx-auto opacity-95">
-            “{testimonials[0]?.quote}”
-          </p>
+      {/* small icon */}
+      <div className="mx-auto mb-6 h-10 w-10 rounded-full border border-primary-foreground/30" />
 
-          <div className="mt-8 text-sm md:text-base opacity-85">
-            {testimonials[0]?.name}
-            {testimonials[0]?.role ? `, ${testimonials[0]?.role}` : ""}
-          </div>
+      <h2 className="text-4xl md:text-6xl font-semibold tracking-tight">
+        Voices of Wellness
+      </h2>
 
-          {/* optional: small cards below (if you want) */}
-          <div className="mt-12 grid gap-6 md:grid-cols-2 text-left">
-            {testimonials.slice(1, 3).map((t) => (
-              <div
-                key={t.name}
-                className="rounded-3xl bg-primary-foreground/10 border border-primary-foreground/15 p-7"
-              >
-                <p className="opacity-95">“{t.quote}”</p>
-                <div className="mt-5 font-semibold">{t.name}</div>
-                {t.role ? <div className="text-sm opacity-80">{t.role}</div> : null}
-              </div>
+      {/* CAROUSEL */}
+      <div className="mt-14 max-w-4xl mx-auto">
+
+        <Carousel
+          opts={{
+            align: "center",
+            loop: true,
+          }}
+        >
+
+          <CarouselContent>
+
+            {testimonials.map((t, i) => (
+
+              <CarouselItem key={i} className="text-center">
+
+                <p className="text-xl md:text-3xl leading-relaxed opacity-95">
+                  “{t.quote}”
+                </p>
+
+                <div className="mt-8 text-sm md:text-base opacity-85">
+                  {t.name}
+                  {t.role ? `, ${t.role}` : ""}
+                </div>
+
+              </CarouselItem>
+
             ))}
-          </div>
-        </div>
+
+          </CarouselContent>
+
+          {/* arrows */}
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+
+        </Carousel>
+
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
 
       {/*How it works booking STEPS */}
       <section className="section relative overflow-hidden">
@@ -349,7 +387,7 @@ export default function HomePage() {
       </section>
 
       {/* PRICING */}
-      <section className="section">
+      {/* <section className="section">
         <div className="site-container">
           <div className="text-center">
             <h2 className="h2 text-primary">Wellness Begins with One Visit</h2>
@@ -390,42 +428,42 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FINAL CTA News letter */}
-<section className="section">
-  <div className="site-container">
-    <div className="mx-auto max-w-6xl rounded-3xl bg-secondary overflow-hidden shadow-soft">
-      <div className="grid md:grid-cols-2">
-        {/* image */}
-        <div className="relative min-h-[240px] md:min-h-[320px]">
-          <Image
-            src="/images/sections/feel-beautiful.jpg"
-            alt="Feel Beautiful"
-            fill
-            className="object-cover"
-          />
-        </div>
+      <section className="section">
+        <div className="site-container">
+          <div className="mx-auto max-w-6xl rounded-3xl bg-secondary overflow-hidden shadow-soft">
+            <div className="grid md:grid-cols-2">
+              {/* image */}
+              <div className="relative min-h-[240px] md:min-h-[320px]">
+                <Image
+                  src="/images/sections/feel-beautiful.jpg"
+                  alt="Feel Beautiful"
+                  fill
+                  className="object-cover"
+                />
+              </div>
 
-        {/* copy */}
-        <div className="p-8 md:p-12 flex flex-col justify-center">
-          <h3 className="text-3xl md:text-5xl font-semibold text-primary leading-tight">
-            Feel Beautiful.<br />Be Beauva.
-          </h3>
-          <p className="mt-3 text-muted-foreground">
-            Ready to elevate your self-care?
-          </p>
+              {/* copy */}
+              <div className="p-8 md:p-12 flex flex-col justify-center">
+                <h3 className="text-3xl md:text-5xl font-semibold text-primary leading-tight">
+                  Feel Beautiful.<br />Be Beauva.
+                </h3>
+                <p className="mt-3 text-muted-foreground">
+                  Ready to elevate your self-care?
+                </p>
 
-          <div className="mt-6">
-            <Link href="/services">
-              <Button className="rounded-full px-7">Book Your Experience</Button>
-            </Link>
+                <div className="mt-6">
+                  <Link href="/services">
+                    <Button className="rounded-full px-7">Book Your Experience</Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
     </>
   );
 }

@@ -1,15 +1,86 @@
-import Image from "next/image"
-import { Phone, Clock, MapPin, Instagram, Facebook, Linkedin, } from "lucide-react"
+"use client";
 
-import { Card } from "@/components/ui/card"
+import { useState, useEffect } from "react";
+import Image from "next/image"
+import { Phone, Clock, MapPin, Instagram, Facebook } from "lucide-react"
+import { FaTiktok } from "react-icons/fa";
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion"
 
 import { generalFaqs } from "@/lib/data/faqs"
+import Link from "next/link";
+
+const WHATSAPP_NUMBER = "254114123208";
+
+const socials = [
+  { href: "https://www.instagram.com/blissfulquinsspa/", label: "Instagram", Icon: Instagram },
+  { href: "https://www.facebook.com/profile.php?id=61577328142953", label: "Facebook", Icon: Facebook },
+  { href: "https://www.tiktok.com/@quinterachieng2", label: "Tiktok", Icon: FaTiktok },
+];
 
 export default function ContactPage() {
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (field: string, value: string) => {
+    setForm((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!form.name.trim()) newErrors.name = "Name is required";
+
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      newErrors.email = "Enter a valid email";
+    }
+
+    if (!form.phone.trim()) newErrors.phone = "Phone number is required";
+    if (!form.subject.trim()) newErrors.subject = "Subject is required";
+    if (!form.message.trim()) newErrors.message = "Message is required";
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    const message = `
+      Hello Blissful Quins Spa,
+
+      Name: ${form.name}
+      Email: ${form.email}
+      Phone: ${form.phone}
+
+      Subject: ${form.subject}
+
+      Message:
+      ${form.message}
+
+      (Message sent from Blissful Quins Spa website)`;
+
+    const encoded = encodeURIComponent(message);
+
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, "_blank");
+  };
+
   return (
     <>
       {/* HERO */}
@@ -60,34 +131,55 @@ export default function ContactPage() {
                 Send us a message and we’ll get back to you shortly.
               </p>
 
-              <form className="mt-8 grid gap-5">
+              <form onSubmit={handleContactSubmit} className="mt-8 grid gap-4">
 
                 <Input
                   placeholder="Full Name"
+                  value={form.name}
+                  onChange={(e) => handleChange("name", e.target.value)}
                   className="bg-transparent border-white/40 text-white placeholder:text-white/60"
                 />
+                {errors.name && <p className="text-red-300 text-xs">{errors.name}</p>}
 
                 <div className="grid md:grid-cols-2 gap-4">
-                  <Input
-                    placeholder="Your Email"
-                    className="bg-transparent border-white/40 text-white placeholder:text-white/60"
-                  />
 
-                  <Input
-                    placeholder="Phone Number"
-                    className="bg-transparent border-white/40 text-white placeholder:text-white/60"
-                  />
+                  <div>
+                    <Input
+                      placeholder="Your Email"
+                      value={form.email}
+                      onChange={(e) => handleChange("email", e.target.value)}
+                      className="bg-transparent border-white/40 text-white placeholder:text-white/60"
+                    />
+                    {errors.email && <p className="text-red-300 text-xs">{errors.email}</p>}
+                  </div>
+
+                  <div>
+                    <Input
+                      placeholder="Phone Number"
+                      value={form.phone}
+                      onChange={(e) => handleChange("phone", e.target.value)}
+                      className="bg-transparent border-white/40 text-white placeholder:text-white/60"
+                    />
+                    {errors.phone && <p className="text-red-300 text-xs">{errors.phone}</p>}
+                  </div>
+
                 </div>
 
                 <Input
                   placeholder="Subject"
+                  value={form.subject}
+                  onChange={(e) => handleChange("subject", e.target.value)}
                   className="bg-transparent border-white/40 text-white placeholder:text-white/60"
                 />
+                {errors.subject && <p className="text-red-300 text-xs">{errors.subject}</p>}
 
                 <Textarea
                   placeholder="Message"
+                  value={form.message}
+                  onChange={(e) => handleChange("message", e.target.value)}
                   className="bg-transparent border-white/40 text-white placeholder:text-white/60 min-h-[140px]"
                 />
+                {errors.message && <p className="text-red-300 text-xs">{errors.message}</p>}
 
                 <Button className="rounded-full bg-background text-foreground hover:bg-background/90 w-fit px-8">
                   Send Message
@@ -115,7 +207,7 @@ export default function ContactPage() {
               <h3 className="mt-4 font-semibold">Contact</h3>
 
               <p className="text-muted-foreground text-sm mt-2">
-                hello@blissfulquins.com
+                blisfulquinsspa@gmail.com
               </p>
 
               <p className="text-muted-foreground text-sm">
@@ -165,13 +257,17 @@ export default function ContactPage() {
           {/* SOCIALS */}
           <div className="mt-10 flex justify-center gap-4">
 
-            {[Instagram, Facebook, Linkedin,].map((Icon, i) => (
-              <div
-                key={i}
+            {socials.map(({ href, label, Icon }) => (
+              <Link
+                key={label}
+                href={href}
+                aria-label={label}
                 className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center cursor-pointer hover:bg-secondary/80"
+                target="_blank"
+                rel="noreferrer"
               >
                 <Icon className="w-4 h-4 text-primary" />
-              </div>
+              </Link>
             ))}
 
           </div>

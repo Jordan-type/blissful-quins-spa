@@ -175,11 +175,8 @@ export default function AboutPage() {
 
       </section>
 
-
-
       {/* VIDEO */}
       <section className="section">
-
         <div className="site-container text-center">
 
           <h2 className="text-3xl md:text-4xl font-serif text-primary">
@@ -187,26 +184,37 @@ export default function AboutPage() {
           </h2>
 
           <p className="text-muted-foreground mt-3">
-            A glimpse into the Beauva experience.
+            A glimpse into the Blissful Quins Spa experience.
           </p>
 
+          {/* VIDEO GRID */}
+          <div className="mt-12 grid gap-8 justify-center sm:grid-cols-2 lg:grid-cols-4">
 
-          <div className="mt-8 rounded-2xl overflow-hidden">
-
-            <div className="relative aspect-video">
-
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                allowFullScreen
-              />
-
-            </div>
+            {[
+              "/videos/17.02.58.mp4",
+              "/videos/17.08.05.mp4",
+              "/videos/17.09.58.mp4",
+              "/videos/17.12.45.mp4",
+            ].map((video) => (
+              <div
+                key={video}
+                className="w-full max-w-[300px] mx-auto rounded-xl overflow-hidden shadow-md bg-black"
+              >
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-auto"
+                >
+                  <source src={video} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            ))}
 
           </div>
 
         </div>
-
       </section>
 
       {/* MILESTONES */}

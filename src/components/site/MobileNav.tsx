@@ -36,8 +36,8 @@ export default function MobileNav() {
             </Link>
           ))}
 
-          <Link href="/signup" className="mt-2">
-            <Button className="w-full rounded-2xl">Sign Up</Button>
+          <Link href="/book-now" className="mt-2">
+            <Button className="w-full rounded-2xl">Book Now</Button>
           </Link>
         </div>
       </SheetContent>

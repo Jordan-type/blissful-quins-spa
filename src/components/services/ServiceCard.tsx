@@ -4,10 +4,14 @@ import type { Service } from "@/lib/data/services";
 
 export function ServiceCard({ service }: { service: Service }) {
   return (
-    <Link
-      href={`/services/${service.slug}`}
-      className="group relative block w-full max-w-[360px] aspect-[3/4.6] rounded-2xl overflow-hidden cursor-pointer"
-    >
+    <div className="group relative block w-full max-w-[360px] aspect-[3/4.6] rounded-2xl overflow-hidden cursor-pointer">
+
+      {/* CARD CLICKABLE LINK */}
+      <Link
+        href={`/services/${service.slug}`}
+        className="absolute inset-0 z-10"
+      />
+
       {/* Background Image */}
       <Image
         src={service.heroImage}
@@ -20,6 +24,7 @@ export function ServiceCard({ service }: { service: Service }) {
       {/* Default State */}
       <div className="absolute inset-0 flex flex-col justify-end transition-opacity duration-500 ease-out group-hover:opacity-0">
         <div className="bg-[#A21A64]/70 backdrop-blur-[2px] px-6 py-6">
+
           <p className="text-[#d9cfc4] text-sm font-light tracking-wider mb-1">
             {service.category}
           </p>
@@ -27,6 +32,7 @@ export function ServiceCard({ service }: { service: Service }) {
           <h3 className="text-[#f5efe8] text-xl md:text-2xl font-serif font-bold leading-tight">
             {service.title}
           </h3>
+
         </div>
       </div>
 
@@ -50,13 +56,15 @@ export function ServiceCard({ service }: { service: Service }) {
         </p>
 
         {/* BUTTONS */}
-        <div className="flex flex-col gap-3 w-full max-w-[220px]">
+        <div className="flex flex-col gap-3 w-full max-w-[220px] relative z-20">
 
           {/* View Details */}
-          <span className="block w-full text-center px-6 py-3 rounded-full bg-[#e8ddd1] text-[#4a3f35] text-sm font-medium tracking-wide transition-all duration-300 hover:bg-[#f5efe8] hover:shadow-lg hover:scale-[1.03]">
+          <Link
+            href={`/services/${service.slug}`}
+            className="block w-full text-center px-6 py-3 rounded-full bg-[#e8ddd1] text-[#4a3f35] text-sm font-medium tracking-wide transition-all duration-300 hover:bg-[#f5efe8] hover:shadow-lg hover:scale-[1.03]"
+          >
             View Details
-          </span>
-
+          </Link>
 
           {/* Book Now */}
           <Link
@@ -64,20 +72,14 @@ export function ServiceCard({ service }: { service: Service }) {
               pathname: "/book-now",
               query: { service: service.title },
             }}
-            className="w-full"
+            className="block w-full text-center px-6 py-3 rounded-full bg-white text-[#A21A64] text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-[#f8f8f8] hover:shadow-lg hover:scale-[1.03]"
           >
-            <span className="block w-full text-center px-6 py-3 rounded-full bg-white text-[#A21A64] text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-[#f8f8f8] hover:shadow-lg hover:scale-[1.03]">
-              Book This Treatment
-            </span>
+            Book This Treatment
           </Link>
 
         </div>
 
       </div>
-    </Link>
-  )
+    </div>
+  );
 }
-
-
-
-

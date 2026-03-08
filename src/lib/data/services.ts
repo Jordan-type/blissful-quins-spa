@@ -16,6 +16,60 @@ export type Service = {
 
 export const services: Service[] = [
   {
+    slug: "individual-cluster-lashes",
+    title: "Individual Cluster Lashes",
+    category: "Beauty Enhancements",
+    short: "Lightweight cluster lashes that enhance length and volume for a natural glamorous look.",
+    description: "Individual cluster lashes are carefully applied to your natural lashes to create fuller, longer, and beautifully defined eyes. This treatment enhances your natural beauty while remaining lightweight and comfortable for everyday wear or special occasions.",
+    expectations: [
+      {
+        title: "Consultation",
+        text: "Your lash technician will assess your natural lashes and discuss your desired look, whether soft and natural or fuller and more dramatic.",
+      },
+      {
+        title: "Lash Preparation",
+        text: "Your lashes are gently cleaned and prepared to ensure the cluster lashes bond securely and last longer.",
+      },
+      {
+        title: "Cluster Lash Application",
+        text: "Individual lash clusters are carefully applied using professional adhesive to enhance length and volume while maintaining a natural look.",
+      },
+      {
+        title: "Final Styling",
+        text: "Your lashes are brushed, shaped, and checked to ensure a flawless finish and comfortable wear.",
+      },
+    ],
+    heroImage: "/images/services/individual-clushes-lashes.jpg",
+    duration: "45 minutes",
+    schedule: "Mon–Sat: 9:00AM–8:00PM",
+    price: "KSh 2,000 per session",
+    benefits: [
+      "Enhances lash length and fullness",
+      "Creates a natural glamorous look",
+      "Lightweight and comfortable",
+      "Perfect for events or daily beauty",
+      "Quick application time",
+    ],
+
+    gallery: [
+      "/images/services/individual-clushes-lashes.jpg",
+    ],
+    faqs: [
+      {
+        q: "How long do cluster lashes last?",
+        a: "Cluster lashes typically last between 3–7 days depending on aftercare and your natural lash cycle.",
+      },
+      {
+        q: "Can I wear makeup with cluster lashes?",
+        a: "Yes, but avoid oil-based products around the eyes to help the lashes last longer.",
+      },
+      {
+        q: "Will cluster lashes damage my natural lashes?",
+        a: "No. When applied and removed correctly by a professional, cluster lashes are safe for your natural lashes.",
+      },
+    ],
+  },
+  {
     slug: "back-massage",
     title: "Back Massage",
     category: "Massage Therapy",
@@ -136,7 +190,7 @@ export const services: Service[] = [
     heroImage: "/images/services/signature-manicure.jpg",
     duration: "—",
     schedule: "Mon–Sat: 9:00AM–8:00PM",
-    price: "KSh 2,500 per session",
+    price: "KSh 1,800 per session",
     benefits: ["Neat finish", "Healthy nails", "Hydration care", "Longer-lasting polish"],
     gallery: [
       "/images/services/signature-manicure.jpg",
@@ -183,7 +237,7 @@ export const services: Service[] = [
     heroImage: "/images/services/signature-pedicure.jpg",
     duration: "—",
     schedule: "Mon–Sat: 9:00AM–8:00PM",
-    price: "KSh 1,800 per session",
+    price: "KSh 2,500 per session",
     benefits: ["Softer feet", "Callus care", "Relaxation", "Polished finish"],
     gallery: [
       "/images/services/signature-pedicure.jpg",

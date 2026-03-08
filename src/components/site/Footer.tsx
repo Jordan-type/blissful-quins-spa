@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { Instagram, Facebook, Linkedin } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 
 const socials = [
-  { href: "https://instagram.com", label: "Instagram", Icon: Instagram },
-  { href: "https://facebook.com", label: "Facebook", Icon: Facebook },
-  { href: "https://linkedin.com", label: "LinkedIn", Icon: Linkedin },
+  { href: "https://www.instagram.com/blissfulquinsspa/", label: "Instagram", Icon: Instagram },
+  { href: "https://www.facebook.com/profile.php?id=61577328142953", label: "Facebook", Icon: Facebook },
+  { href: "https://www.tiktok.com/@quinterachieng2", label: "Tiktok", Icon: FaTiktok },
 ];
 
 
@@ -79,7 +80,7 @@ export default function Footer({ className }: { className?: string }) {
             <h4 className="font-semibold text-primary">Contact Us</h4>
             <ul className="mt-4 grid gap-2 text-muted-foreground">
               <li>+254 114 123 208</li>
-              <li>hello@blissfulquins.com</li>
+              <li>blisfulquinsspa@gmail.com</li>
               <li>Chaka Rd aside Kilua Apartment, Nairobi, Kenya</li>
             </ul>
 

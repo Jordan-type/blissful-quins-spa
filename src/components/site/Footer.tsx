@@ -81,7 +81,7 @@ export default function Footer({ className }: { className?: string }) {
             <ul className="mt-4 grid gap-2 text-muted-foreground">
               <li>+254 114 123 208</li>
               <li>blisfulquinsspa@gmail.com</li>
-              <li>Chaka Rd aside Kilua Apartment, Nairobi, Kenya</li>
+              <li>Chaka Rd besides Kilua Apartment, Nairobi, Kenya</li>
             </ul>
 
             {/* socials pills (optional) */}

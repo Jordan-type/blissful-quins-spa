@@ -12,8 +12,8 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif"
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], });
 
 export const metadata = {
-  title: "Blissful Quins Spa",
-  description: "Rooted in wellness, elevated by beauty.",
+  title: "Blissful Quins Spa | Luxury Spa in Nairobi",
+  description: "Rooted in wellness, elevated by beauty. Experience luxury spa treatments, massages, and facials at Blissful Quins Spa in Nairobi.",
   applicationName: "blissful-quins-spa",
 };
 

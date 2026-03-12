@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.blissfulquinsspa.com
+
+# Sitemaps
+Sitemap: https://www.blissfulquinsspa.com/sitemap.xml
